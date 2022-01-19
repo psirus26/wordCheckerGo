@@ -13,6 +13,7 @@ func ReadFileWithTabooWords() map[string]bool {
 	var fileNameTaboo string
 	var tabooWords = make(map[string]bool)
 
+	fmt.Println("Enter the name of the file containing the taboo words dictionary")
 	fmt.Scan(&fileNameTaboo)
 	if fileNameTaboo != "" {
 		file, err := os.Open(fileNameTaboo)
@@ -71,6 +72,7 @@ func RunCheckTaboo() {
 	var tabooWords = make(map[string]bool)
 	tabooWords = ReadFileWithTabooWords()
 
+	fmt.Println("Enter a sentence to see if it contains a taboo word. Enter 'exit' to quit")
 	for true {
 		fmt.Scan(&tabooSentence)
 		if tabooSentence != "exit" {
